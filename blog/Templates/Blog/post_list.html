@@ -1,23 +1,19 @@
 <html>
-	<head>
-		<title>Lily's blog</title>
-	</head>
-	<body>
-		<div>
-			<h1>Blog de Django girls!</h1>
-			<p>It has been an exciting and hard working day learning to program with Django</p>
-		</div>
+<head>
+	<title>Lily's blog</title>
+</head>
+<body>
 
+	<div>
+		<h1><a href="/">Django Girls Blog</a></h1>
+	</div>
 
-		<div>
-			<h1>Python for kids</h1>
-			<p> You should try it<p>
-		</div>
-
-
-		<div>
-			<h1>NS Marketing</h1>
-			<p><a href="">My first post</a>
-		</div>
-	</body>
+	{% for post in posts %}
+	<div>
+		<p>published: {{ post.published_date }}</p>
+		<h2><a href="">{{ post.title }}</a></h2>
+		<p>{{ post.text|linebreaks }}</p>
+	</div>
+	{% endfor %}
+</body>
 </html>
